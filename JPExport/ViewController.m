@@ -30,7 +30,7 @@
     NSArray * classes = @[@{@"Chinese":@"98",@"population":@"1.5 billion",@"Class_hour":@53},
                           @{@"color":@"red"},
                           @{@"English":@"39",
-                            @"class_1our":@"48",
+                            @"class_6our":@"48",
                             @"class_size":@40,
                             @"teacher_name":@"jobs"}];
     
@@ -45,7 +45,7 @@
     
     NSLog(@"原始 dict = %@",dict);
     
-    self.textView.text = [JPExport exportFromDictionary:dict removeUnderLine:_aSwitch.on];
+    self.textView.text = [JPExport exportFromDictionary:dict];
 }
 
 

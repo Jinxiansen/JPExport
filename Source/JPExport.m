@@ -28,8 +28,8 @@
               removeUnderLine:(BOOL)isRemove {
     
     NSMutableString * mutableString = [NSMutableString string];
-    NSString * result = [NSString stringWithFormat:@"\n\n/*** 生成%lu个 property 👈👈 ***/\n\n",[[dictionary allKeys] count]];
-    [mutableString appendString:result];
+    NSString * title = [NSString stringWithFormat:@"\n\n/*** %lu个 property ✍️✍️ ***/\n\n",[[dictionary allKeys] count]];
+    [mutableString appendString:title];
     
     NSMutableString * dictString = [NSMutableString string];
     
@@ -39,12 +39,10 @@
         
         NSString * className = NSStringFromClass([obj class]);
         if ([className containsString:@"String"]) {
-            
             string = [NSString stringWithFormat:@"/** <#%@#> */\n@property (nonatomic, copy) NSString *%@;",newKey,newKey];
         } else if ([className containsString:@"Array"]) {
             string = [NSString stringWithFormat:@"/** <#%@#> */\n@property (nonatomic, strong) NSArray *%@;",newKey,newKey];
             [dictString appendString:[self parseArrayWithObj:obj isRemove:isRemove]];
-            
         }else if ([className containsString:@"Number"]) {
             string = [NSString stringWithFormat:@"/** <#%@#> */\n@property (nonatomic, strong) NSNumber *%@;",newKey,newKey];
         }else if ([className containsString:@"Dictionary"]) {
@@ -55,7 +53,6 @@
         }else {
             NSLog(@" 未识别的key : %@ \n",newKey);
         }
-        
         [mutableString appendFormat:@"%@\n",string];
     }];
     [mutableString appendString:dictString];
@@ -63,7 +60,7 @@
     return mutableString;
 }
 
-+ (id )uppercaseStringFromKey:(id)key {
++ (id)uppercaseStringFromKey:(id)key {
     
     if (![key isKindOfClass:[NSString class]]) {
         return key;
@@ -76,10 +73,8 @@
     if ([newKey containsString:@"_"]) {
         NSString * newKeyString = (NSString *)newKey;
         NSRange range = [newKeyString rangeOfString:@"_"];
-        
         if (newKeyString.length >= (range.location + range.length)) {
             NSString * letter = [newKeyString substringWithRange:NSMakeRange(range.location + 1, range.length)];
-            
             NSString * result = [newKeyString stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"_%@",letter] withString:[letter uppercaseString]];
             newKey = result;
         }
