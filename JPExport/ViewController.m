@@ -27,7 +27,8 @@
 
 - (void)exportData {
     
-    NSArray * classes = @[@{@"Chinese":@"98",@"Class_hour":@53},
+    NSArray * classes = @[@{@"Chinese":@"98",@"population":@"1.5 billion",@"Class_hour":@53},
+                          @{@"color":@"red"},
                           @{@"English":@"39",
                             @"class_1our":@"48",
                             @"class_size":@40,
@@ -40,8 +41,7 @@
                             @"course":classes};
     
     NSDictionary * dict = @{@"errorcode":@2,
-                            @"data":data,
-                            @"classes":classes};
+                            @"data":data};
     
     NSLog(@"原始 dict = %@",dict);
     

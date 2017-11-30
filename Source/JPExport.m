@@ -28,7 +28,7 @@
               removeUnderLine:(BOOL)isRemove {
     
     NSMutableString * mutableString = [NSMutableString string];
-    NSString * result = [NSString stringWithFormat:@"\n\n/***** 生成%lu个 property 👈👈 *****/\n\n",[[dictionary allKeys] count]];
+    NSString * result = [NSString stringWithFormat:@"\n\n/*** 生成%lu个 property 👈👈 ***/\n\n",[[dictionary allKeys] count]];
     [mutableString appendString:result];
     
     NSMutableString * dictString = [NSMutableString string];
@@ -43,11 +43,7 @@
             string = [NSString stringWithFormat:@"/** <#%@#> */\n@property (nonatomic, copy) NSString *%@;",newKey,newKey];
         } else if ([className containsString:@"Array"]) {
             string = [NSString stringWithFormat:@"/** <#%@#> */\n@property (nonatomic, strong) NSArray *%@;",newKey,newKey];
-            if ([NSStringFromClass([[obj firstObject]class]) containsString:@"Dictionary"]) {
-                for (NSDictionary * dict in obj) {
-                    [dictString appendString:[self parseDictionary:dict removeUnderLine:isRemove]];
-                }
-            }
+            [dictString appendString:[self parseArrayWithObj:obj isRemove:isRemove]];
             
         }else if ([className containsString:@"Number"]) {
             string = [NSString stringWithFormat:@"/** <#%@#> */\n@property (nonatomic, strong) NSNumber *%@;",newKey,newKey];
@@ -90,5 +86,22 @@
     }
     return newKey;
 }
+
+
++ (NSString *)parseArrayWithObj:(id)obj isRemove:(BOOL)isRemove {
+    
+    if ([NSStringFromClass([[obj firstObject]class]) containsString:@"Dictionary"]) {
+        NSMutableString * arrayString = [NSMutableString string];
+        for (NSDictionary * dict in obj) {
+            [arrayString appendString:[self parseDictionary:dict removeUnderLine:isRemove]];
+        }
+        return arrayString;
+    }
+    return @"";
+}
+
+
+
+
 
 @end
