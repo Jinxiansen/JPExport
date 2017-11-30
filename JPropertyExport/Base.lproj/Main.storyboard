@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEE-zk-IRb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="557"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.52844071061643838" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sSZ-xt-8rC">
+                                <rect key="frame" x="267" y="587" width="51" height="31"/>
+                                <color key="onTintColor" red="0.19188237190246582" green="0.8070979118347168" blue="0.6978529691696167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="fBl-Of-htt"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否移除下划线" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaX-Za-grA">
+                                <rect key="frame" x="237.5" y="628" width="107.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN7-AO-nUH">
+                                <rect key="frame" x="30" y="587" width="177.5" height="60"/>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.80658191440000004" blue="0.69867193699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="8B4-Z5-xeg"/>
+                                </constraints>
+                                <state key="normal" title="Export">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="exportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dib-DA-b4w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SEE-zk-IRb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="74z-g0-9Cd"/>
+                            <constraint firstItem="GaX-Za-grA" firstAttribute="top" secondItem="sSZ-xt-8rC" secondAttribute="bottom" constant="10" id="7oz-wq-5Pz"/>
+                            <constraint firstItem="EN7-AO-nUH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="AIs-Lu-UzX"/>
+                            <constraint firstItem="sSZ-xt-8rC" firstAttribute="centerX" secondItem="GaX-Za-grA" secondAttribute="centerX" id="C1e-2b-abd"/>
+                            <constraint firstItem="EN7-AO-nUH" firstAttribute="top" secondItem="SEE-zk-IRb" secondAttribute="bottom" constant="10" id="FlO-ul-IQj"/>
+                            <constraint firstItem="SEE-zk-IRb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mhb-GK-ZF8"/>
+                            <constraint firstItem="sSZ-xt-8rC" firstAttribute="top" secondItem="EN7-AO-nUH" secondAttribute="top" id="Oz2-42-UEz"/>
+                            <constraint firstItem="GaX-Za-grA" firstAttribute="leading" secondItem="EN7-AO-nUH" secondAttribute="trailing" constant="30" id="agr-Bh-3jj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EN7-AO-nUH" secondAttribute="bottom" constant="20" id="c9w-RJ-M5K"/>
+                            <constraint firstItem="SEE-zk-IRb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="esl-hs-wRS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GaX-Za-grA" secondAttribute="trailing" constant="30" id="oNP-8g-tii"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="aSwitch" destination="sSZ-xt-8rC" id="cKM-JE-Kms"/>
+                        <outlet property="label" destination="GaX-Za-grA" id="34H-sd-YGD"/>
+                        <outlet property="textView" destination="SEE-zk-IRb" id="qqh-Yc-LWf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="86.806596701649184"/>
+        </scene>
+    </scenes>
+</document>
