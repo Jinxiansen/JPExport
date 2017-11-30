@@ -1,13 +1,13 @@
 //
 //  ViewController.m
-//  JPropertyExport
+//  JPExport
 //
 //  Created by Jinxiansen on 2017/11/30.
 //  Copyright © 2017年 Jinxiansen. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "JPropertyExport.h"
+#import "JPExport.h"
 
 @interface ViewController ()
 
@@ -45,7 +45,7 @@
     
     NSLog(@"原始 dict = %@",dict);
     
-    self.textView.text = [JPropertyExport propertyExportFromDictionary:dict removeUnderLine:_aSwitch.on];
+    self.textView.text = [JPExport exportFromDictionary:dict removeUnderLine:_aSwitch.on];
 }
 
 

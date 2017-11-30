@@ -1,20 +1,20 @@
 //
-//  JPropertyExport.m
-//  RecorderingButton
+//  JPExport.m
+//
 //
 //  Created by Jinxiansen on 2017/11/30.
 //  Copyright © 2017年 Jinxiansen. All rights reserved.
 //
 
-#import "JPropertyExport.h"
+#import "JPExport.h"
 
-@implementation JPropertyExport
+@implementation JPExport
 
-+ (NSString *)propertyExportFromDictionary:(NSDictionary *)dictionary {
-    return [self propertyExportFromDictionary:dictionary removeUnderLine:YES];
++ (NSString *)exportFromDictionary:(NSDictionary *)dictionary {
+    return [self exportFromDictionary:dictionary removeUnderLine:YES];
 }
 
-+ (NSString *)propertyExportFromDictionary:(NSDictionary *)dictionary
++ (NSString *)exportFromDictionary:(NSDictionary *)dictionary
                            removeUnderLine:(BOOL)isRemove {
     
     NSMutableString * mutableString = [NSMutableString string];
