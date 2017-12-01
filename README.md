@@ -1,6 +1,6 @@
-![](image/JPExport.png)
+![](image/JPExport2.png)
 
-### JPExport 适用于网络数据 responseObject 转 property ，避免手写困扰和出错。
+### JPExport 仅用于网络数据 responseObject 解析生成 property 。
 
 支持 NSArray、NSDictionary、NSString、NSNumber、BOOL  。
 
