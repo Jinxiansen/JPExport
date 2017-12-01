@@ -2,6 +2,8 @@
 
 ### JPExport 仅用于网络数据 responseObject 解析生成 property 。
 
+Mac 版、Swift版待续…
+
 支持 NSArray、NSDictionary、NSString、NSNumber、BOOL  。
 
 # Screenshots
