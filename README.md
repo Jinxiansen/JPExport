@@ -55,8 +55,8 @@
 @property (nonatomic, strong) NSNumber *class_size;
 /** teacher_name */
 @property (nonatomic, copy) NSString *teacher_name;
-/** class_1our */
-@property (nonatomic, copy) NSString *class_1our;
+/** class_6our */
+@property (nonatomic, copy) NSString *class_6our;
 
 ```
 
