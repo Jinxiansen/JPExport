@@ -26,7 +26,11 @@
 
 - (void)exportData {
     
-    NSArray * classes = @[@{@"Chinese":@"98",@"population":@"1.5 billion",@"Class_hour":@53},
+    NSDictionary * china = @{@"Chinese":@"98",
+                             @"population":@"1.5 billion",
+                             @"Class_hour":@53};
+    
+    NSArray * classes = @[china,
                           @{@"English":@"39",
                             @"class_6our":@"48",
                             @"class_size":@40,
