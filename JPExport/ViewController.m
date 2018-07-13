@@ -30,6 +30,7 @@
                              @"population":@"1.5 billion",
                              @"Class_hour":@53};
     
+    //嵌套
     NSArray * classes = @[china,
                           @{@"English":@"39",
                             @"class_6our":@"48",
@@ -65,6 +66,7 @@
 }
 
 - (IBAction)switchSlider:(UISwitch *)sender {
+    
     sender.on = !sender.on;
     self.label.text = sender.on ? @"移除key中的 _":@"保留key中的 _";
     [self exportData];
