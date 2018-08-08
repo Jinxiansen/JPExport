@@ -6,7 +6,7 @@
 
 # Screenshots
 
-![](image/exportGif.gif)
+![](image/export.gif)
 
 
 ##### 示例如下：
