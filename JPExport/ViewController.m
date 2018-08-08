@@ -28,16 +28,23 @@
 - (void)exportData {
     
     NSArray * classes = @[@{@"Chinese":@"98",@"population":@"1.5 billion",@"Class_hour":@53},
-                          @{@"color":@"red"},
                           @{@"English":@"39",
                             @"class_6our":@"48",
                             @"class_size":@40,
                             @"teacher_name":@"jobs"}];
     
+    //验证数组字典去重
+    NSArray * colors =  @[@{@"color":@"white"},
+                          @{@"color":@"red"},
+                          @{@"color":@"blue"},
+                          @{@"color":@"black"},
+                          @{@"color":@"yellow"}];
+    
     NSDictionary * data = @{@"age":@19,
                             @"name":@"Jinxiansen",
                             @"blog":@"jinxiansen.com",
                             @"sex":@"男",
+                            @"colors":colors,
                             @"course":classes};
     
     NSDictionary * dict = @{@"errorcode":@2,

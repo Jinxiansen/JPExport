@@ -85,11 +85,30 @@
 
 + (NSString *)parseArrayWithObj:(id)obj isRemove:(BOOL)isRemove {
     
+    if (![obj isKindOfClass:[NSArray class]]) {
+        return @"";
+    }
+    
     if ([NSStringFromClass([[obj firstObject]class]) containsString:@"Dictionary"]) {
+        
+        NSDictionary * firstDict = [obj firstObject];
         NSMutableString * arrayString = [NSMutableString string];
-        for (NSDictionary * dict in obj) {
-            [arrayString appendString:[self parseDictionary:dict removeUnderLine:isRemove]];
+        if ([obj count] > 1) {
+            NSDictionary * lastDict = [obj lastObject];
+            NSSet * firstSet = [NSSet setWithArray:[firstDict allKeys]];
+            NSSet * lastSet = [NSSet setWithArray:[lastDict allKeys]];
+            
+            if ([firstSet isEqualToSet:lastSet]) {
+                [arrayString appendString:[self parseDictionary:firstDict removeUnderLine:isRemove]];
+            } else {
+                for (NSDictionary * dict in obj) {
+                    [arrayString appendString:[self parseDictionary:dict removeUnderLine:isRemove]];
+                }
+            }
+        }else {
+            [arrayString appendString:[self parseDictionary:firstDict removeUnderLine:isRemove]];
         }
+        
         return arrayString;
     }
     return @"";

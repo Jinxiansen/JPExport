@@ -1,6 +1,8 @@
-![](image/JPExport.png)
+![](image/JPExport2.png)
 
-### JPExport 适用于网络数据 responseObject 转 property ，避免手写困扰和出错。
+### JPExport 仅用于网络数据 responseObject 解析生成 property 。
+
+Mac 版、Swift版待续…
 
 支持 NSArray、NSDictionary、NSString、NSNumber、BOOL  。
 
@@ -55,8 +57,8 @@
 @property (nonatomic, strong) NSNumber *class_size;
 /** teacher_name */
 @property (nonatomic, copy) NSString *teacher_name;
-/** class_1our */
-@property (nonatomic, copy) NSString *class_1our;
+/** class_6our */
+@property (nonatomic, copy) NSString *class_6our;
 
 ```
 
