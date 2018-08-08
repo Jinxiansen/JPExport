@@ -11,7 +11,6 @@
 
 @interface ViewController ()
 
-
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UISwitch *aSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *label;
